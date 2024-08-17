@@ -1,0 +1,16 @@
+version: '3'
+services:
+  server:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - 'common.env'
+    container_name: geptyro-io-server
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+    ports:
+      - "10002:10002"
+    working_dir: /app
+volumes:
+  mongodata:
