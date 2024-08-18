@@ -1,9 +1,8 @@
-const { fstat, readFileSync } = require('fs')
+const { readFileSync } = require('fs')
 const { join } = require('path')
 
-
 const ENV = process.env.ENV
-
+console.log({ ENV })
 let certsPath = '/etc/nginx/certs'
 const root = join(__dirname, '..')
 
@@ -17,13 +16,10 @@ const config = require('sools-core/config')
 
 const FULL_HOST = `${process.env.LETSENCRYPT_STAGING === "1" ? '_test_' : ''}${HOST}`
 
-
 module.exports = config(
   {
     env: ENV,
     root,
-    dist: join(root, '.build'),
-    node_modules: join(root, `${ENV === 'dev' ? '../../' : ''}node_modules`),
     express: {
       port: process.env.EXPRESS_PORT,
       host: process.env.HOST,
@@ -43,5 +39,6 @@ module.exports = config(
       db: `geptyro-io-${ENV}`,
     }
   },
-  require('./private')
+  require('./private'),
+  require(`./${ENV}`),
 )

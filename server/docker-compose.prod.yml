@@ -11,7 +11,7 @@ services:
       - ../envs/${ENV}.env
     volumes:
       - ./:/app:cached
-      - ../build:/app/build
+      - ../build:/etc/build
       - /app/node_modules
       - ./nginx/${ENV}/certs:/etc/nginx/certs
     expose:
@@ -50,6 +50,8 @@ services:
       - nginx-proxy
     environment:
       - NGINX_PROXY_CONTAINER=geptyro-io-${ENV}-nginx-proxy
+      - LETSENCRYPT_STAGING=1
+      - LETSENCRYPT_ENV=staging
   database:
     restart: unless-stopped
     container_name: geptyro-io-${ENV}-database

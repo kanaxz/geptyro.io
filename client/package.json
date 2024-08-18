@@ -1,0 +1,23 @@
+{
+  "name": "geptyro.io-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "export ENV=dev && webpack-dev-server --mode=development --config webpack.config --host 0.0.0.0",
+    "build": "export ENV=prod && webpack --mode=production --config webpack.config"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "sools-core-hedera": "^1.0.0",
+    "sools-hedera": "^1.1.0",
+    "sools-management-hedera": "^1.0.0",
+    "sools-modeling-hedera": "^1.0.0",
+    "sools-webpack": "file:../../sools/webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.93.0"
+  }
+}
