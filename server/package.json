@@ -1,6 +1,6 @@
 {
  "name": "geptyro.io-server",
- "version": "1.15.0",
+ "version": "1.17.0",
  "main": "index.js",
  "private": true,
  "scripts": {
@@ -14,7 +14,7 @@
   "dev:server": "export ENV=dev && node index",
   "dev:restart": "npm run dev:stop && npm run dev:start",
   "dev:stop": "export ENV=dev && npm run stop",
-  "push": "sools-push ../.. geptyro.io-server"
+  "push": "sools-push geptyro.io-server"
  },
  "author": "",
  "license": "ISC",
