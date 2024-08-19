@@ -32,9 +32,10 @@ services:
       - "${NGINX_HTTPS_PORT}:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./nginx/${ENV}/certs:/etc/nginx/certs
-      - ./nginx/${ENV}/vhost:/etc/nginx/vhost.d
-      - ./nginx/${ENV}/html:/usr/share/nginx/html
+      - nginx-certs:/etc/nginx/certs
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - nginx-acme:/etc/acme.sh
   # Let's Encrypt companion for automatic SSL certificates
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -43,9 +44,10 @@ services:
       - ../envs/${ENV}.env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./nginx/${ENV}/certs:/etc/nginx/certs
-      - ./nginx/${ENV}/vhost:/etc/nginx/vhost.d
-      - ./nginx/${ENV}/html:/usr/share/nginx/html
+      - nginx-certs:/etc/nginx/certs
+      - nginx-vhost:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - nginx-acme:/etc/acme.sh
     depends_on:
       - nginx-proxy
     environment:
@@ -62,3 +64,7 @@ services:
       - mongodata:/data/db
 volumes:
   mongodata:
+  nginx-certs:
+  nginx-vhost:
+  nginx-html:
+  nginx-acme:
