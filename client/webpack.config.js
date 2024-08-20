@@ -19,12 +19,13 @@ module.exports = (nope, argv) => {
         main: path('./src/index.js')
       },
       output: {
-        path: path('../build')
+        path: path('../build'),
+        publicPath: '/static/'
       },
       devServer: {
         https: true,
         historyApiFallback: true,
-        port: 9001,
+        port: 10001,
         proxy: [
           {
             context: ['/api'],

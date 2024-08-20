@@ -13,47 +13,17 @@ services:
       - ./:/app:cached
       - ../build:/etc/build
       - /app/node_modules
-      - ./nginx/${ENV}/certs:/etc/nginx/certs
     expose:
       - "${EXPRESS_PORT}"
     working_dir: /app
     environment:
-      - VIRTUAL_HOST=${HOST}
+      - VIRTUAL_HOST=${HOST},www.${HOST}
       - VIRTUAL_PORT=${EXPRESS_PORT}
-      - LETSENCRYPT_HOST=${HOST}
+      - LETSENCRYPT_HOST=${HOST},www.${HOST}
       - LETSENCRYPT_EMAIL=geptyro@gmail.com
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    container_name: geptyro-io-${ENV}-nginx-proxy
-    env_file:
-      - ../envs/${ENV}.env
-    ports:
-      - "${NGINX_HTTP_PORT}:80"
-      - "${NGINX_HTTPS_PORT}:443"
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - nginx-certs:/etc/nginx/certs
-      - nginx-vhost:/etc/nginx/vhost.d
-      - nginx-html:/usr/share/nginx/html
-      - nginx-acme:/etc/acme.sh
-  # Let's Encrypt companion for automatic SSL certificates
-  letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    container_name: geptyro-io-${ENV}-letsencrypt
-    env_file:
-      - ../envs/${ENV}.env
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - nginx-certs:/etc/nginx/certs
-      - nginx-vhost:/etc/nginx/vhost.d
-      - nginx-html:/usr/share/nginx/html
-      - nginx-acme:/etc/acme.sh
-    depends_on:
-      - nginx-proxy
-    environment:
-      - NGINX_PROXY_CONTAINER=geptyro-io-${ENV}-nginx-proxy
-      - LETSENCRYPT_STAGING=1
-      - LETSENCRYPT_ENV=staging
+    networks:
+      - sools-nginx
+      - geptyro.io-prod
   database:
     restart: unless-stopped
     container_name: geptyro-io-${ENV}-database
@@ -62,9 +32,11 @@ services:
       - "27017"
     volumes:
       - mongodata:/data/db
+    networks:
+      - geptyro.io-prod
 volumes:
   mongodata:
-  nginx-certs:
-  nginx-vhost:
-  nginx-html:
-  nginx-acme:
+networks:
+  sools-nginx:
+    external: true
+  geptyro.io-prod:
