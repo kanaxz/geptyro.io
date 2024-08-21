@@ -1,4 +1,4 @@
-const AuthService = require('sools-management-hedera/AuthService')
+const AuthService = require('sools-auth-hedera/AuthService')
 const NotificationsService = require('sools-hedera/notifications/NotificationsService')
 const global = require('sools-hedera/global')
 const Navigator = require('sools-hedera/routing/Navigator')

@@ -14,7 +14,7 @@ module.exports = config(
       host: process.env.HOST,
 
     },
-    management: {
+    auth: {
       systemUser: {
         username: 'geptyro',
         wiki: 'abc',

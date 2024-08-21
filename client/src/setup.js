@@ -3,7 +3,7 @@ require('sools-core/setup')
 
 // hedera
 require('sools-modeling-hedera/setup')
-require('sools-management-hedera/setup')
+require('sools-auth-hedera/setup')
 require('sools-core-hedera/setup')
 require('sools-hedera/setup')
 
@@ -26,7 +26,7 @@ global.menu.links.push({
 
 // index
 require('sools-hedera')
-require('sools-management-hedera')
+require('sools-auth-hedera')
 require('sools-modeling-hedera')
 
 
