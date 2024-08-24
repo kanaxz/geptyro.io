@@ -15,7 +15,6 @@ module.exports = class App extends Root {
     this.router.use(starborRouter)
 
     navigator.use(this.router)
-    await auth.getMe()
     await super.start()
     await navigator.start()
   }

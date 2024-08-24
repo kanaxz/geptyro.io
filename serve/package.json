@@ -1,0 +1,29 @@
+{
+ "name": "geptyro.io-serve",
+ "private": true,
+ "version": "1.1.0",
+ "main": "index.js",
+ "author": "",
+ "license": "ISC",
+ "description": "",
+ "scripts": {
+  "start": "docker-compose -f docker-compose.$ENV.yml -p geptyro-io-serve-$ENV --profile $ENV --env-file ../envs/$ENV.env up -d --build",
+  "stop": "docker-compose -f docker-compose.$ENV.yml -p geptyro-io-serve-$ENV --profile $ENV --env-file ../envs/$ENV.env down",
+  "prod:build-client": "npm --workspace=geptyro.io-client run build",
+  "prod:start": "export ENV=prod && npm run prod:build-client && npm run start",
+  "prod:stop": "export ENV=prod && npm run stop",
+  "prod:restart": "npm run prod:stop && npm run prod:start",
+  "dev:start": "export ENV=dev && npm run dev:server",
+  "dev:server": "export ENV=dev && node index",
+  "dev:restart": "npm run dev:stop && npm run dev:start",
+  "dev:stop": "export ENV=dev && npm run stop"
+ },
+ "dependencies": {
+  "dotenv": "^16.4.5",
+  "express": "^4.19.2",
+  "isbot": "^5.1.17",
+  "puppeteer": "^23.1.1",
+  "sools-core-server": "1.19.0",
+  "sools-express-serve": "1.20.0"
+ }
+}

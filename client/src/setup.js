@@ -1,5 +1,4 @@
 const config = require('./config')
-require('sools-core/setup')
 
 // hedera
 require('sools-modeling-hedera/setup')
@@ -11,7 +10,7 @@ const global = require('./global')
 const Loader = require('./components/Loader')
 const Interface = require('./components/Interface')
 const { buildCollections } = require('sools-modeling-client')
-buildCollections(config.server.url)
+buildCollections(config.api.url)
 
 Object.assign(global.components, {
   Loader,

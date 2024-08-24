@@ -1,0 +1,41 @@
+version: '3'
+services:
+  server:
+    build: 
+      context: .
+      args:
+        ENV: ${ENV}
+    restart: unless-stopped
+    container_name: geptyro-io-${ENV}-server
+    env_file:
+      - ../envs/${ENV}.env
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+    expose:
+      - "${API_SERVER_PORT}"
+    working_dir: /app
+    environment:
+      - VIRTUAL_HOST=api.${HOST},www.api.${HOST}
+      - VIRTUAL_PORT=${API_SERVER_PORT}
+      - LETSENCRYPT_HOST=api.${HOST},www.api.${HOST}
+      - LETSENCRYPT_EMAIL=geptyro@gmail.com
+    networks:
+      - sools-nginx
+      - geptyro.io-api-prod
+  database:
+    restart: unless-stopped
+    container_name: geptyro-io-${ENV}-database
+    image: mongo:4.2.18 # Version used on our MongoAtlas cluster
+    expose:
+      - "27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - geptyro.io-api-prod
+volumes:
+  mongodata:
+networks:
+  sools-nginx:
+    external: true
+  geptyro.io-prod:

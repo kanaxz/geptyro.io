@@ -1,0 +1,27 @@
+version: '3'
+services:
+  server:
+    build: 
+      context: .
+      args:
+        ENV: ${ENV}
+    restart: unless-stopped
+    container_name: geptyro-io-serve-${ENV}-server
+    env_file:
+      - ../envs/${ENV}.env
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+    expose:
+      - "${SERVE_SERVER_PORT}"
+    working_dir: /app
+    environment:
+      - VIRTUAL_HOST=${HOST},www.${HOST}
+      - VIRTUAL_PORT=${SERVE_SERVER_PORT}
+      - LETSENCRYPT_HOST=${HOST},www.${HOST}
+      - LETSENCRYPT_EMAIL=geptyro@gmail.com
+    networks:
+      - sools-nginx
+networks:
+  sools-nginx:
+    external: true

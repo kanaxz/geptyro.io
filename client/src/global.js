@@ -6,7 +6,7 @@ const MenuService = require('sools-core-hedera/MenuService')
 const config = require('./config')
 
 Object.assign(global, {
-  auth: new AuthService(config.server.url),
+  auth: new AuthService(config.api.url),
   notifications: new NotificationsService(),
   navigator: new Navigator(),
   menu: new MenuService(),
