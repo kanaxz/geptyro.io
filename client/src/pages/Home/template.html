@@ -1,2 +1,12 @@
 <self>
+  <h1>Applications</h1>
+  <div class="pages" :v-for="page of pages">
+    <a  
+      class="page" 
+      :href="page.url"
+      :target="page.target"
+      :style="page.style"
+      :style.background-image="`url(${page.image})`">
+    </a>
+  </div>
 </self>

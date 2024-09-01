@@ -31,3 +31,4 @@ require('sools-modeling-hedera')
 
 // local sources
 require('./style.scss')
+require('./components')

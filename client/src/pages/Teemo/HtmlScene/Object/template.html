@@ -1,0 +1,26 @@
+<self
+  :style.width="`${this.object.size.@x}%`"
+  :style.height="`${this.object.size.@y}%`"
+  :style.top="`${this.object.position.@y}%`"
+  :style.left="`${this.object.position.@x}%`"
+  :style.z-index="this.object.@index"
+  :class="`${this.scene.@selecteds.indexOf(this.object) !== -1 ? 'selected' : ''}`"
+  :on-dragstart="event.preventDefault()">
+ 
+    <img
+      class="image" 
+      :src="this.object.@src" 
+      as="image">
+    <div class="controls">
+      <div class="actions">
+        <button :on-click="this.object.index++">up</button>
+        <button :on-click="this.object.index = Math.max(this.object.index - 1, 0)">down</button>
+      </div>
+      <div as="corners" class="corners">
+        <div class="top left"></div>
+        <div class="top right"></div>
+        <div class="bottom right"></div>
+        <div class="bottom left"></div>
+      </div>
+    </div>
+</self>

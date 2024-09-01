@@ -1,14 +1,15 @@
 (self["webpackChunkgeptyro_io_client"] = self["webpackChunkgeptyro_io_client"] || []).push([[863],{
 
-/***/ 7863:
+/***/ 57863:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-const template = __webpack_require__(3253)
-const Component = __webpack_require__(722)
-__webpack_require__(2685)
+const template = __webpack_require__(83253)
+const Component = __webpack_require__(50722)
+const pages = __webpack_require__(16031)
+__webpack_require__(52685)
 
 module.exports = class Home extends Component {
- 
+
   async onReady() {
 
   }
@@ -17,38 +18,41 @@ module.exports = class Home extends Component {
     name: 'home-page',
     template,
   })
+  .variables({
+    pages
+  })
 
 /***/ }),
 
-/***/ 7611:
+/***/ 57611:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(935);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(40935);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.id, "", ""]);
+exports.push([module.id, "home-page{display:block;padding:10px}home-page>h1{font-size:32px}home-page .pages{display:flex;flex-direction:row}home-page .pages .page{background-size:contain;background-repeat:no-repeat;background-position:center;display:block;width:300px;height:175px;border:1px solid #e1e1e1;margin-right:10px;margin-bottom:10px;position:relative}\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ 3253:
+/***/ 83253:
 /***/ (function(module) {
 
 // Module
-var code = "<self> </self>";
+var code = "<self> <h1>Applications</h1> <div class=\"pages\" :v-for=\"page of pages\"> <a class=\"page\" :href=\"page.url\" :target=\"page.target\" :style=\"page.style\" :style.background-image=\"`url(${page.image})`\"> </a> </div> </self>";
 // Exports
 module.exports = code;
 
 /***/ }),
 
-/***/ 2685:
+/***/ 52685:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var api = __webpack_require__(2591);
-            var content = __webpack_require__(7611);
+var api = __webpack_require__(72591);
+            var content = __webpack_require__(57611);
 
             content = content.__esModule ? content.default : content;
 

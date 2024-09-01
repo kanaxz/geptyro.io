@@ -1,10 +1,10 @@
 (self["webpackChunkgeptyro_io_client"] = self["webpackChunkgeptyro_io_client"] || []).push([[543],{
 
-/***/ 5171:
+/***/ 35171:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(935);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(40935);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.id, "login-page{display:flex;width:100%;height:100%;align-items:center;justify-content:center}login-page>.content{width:350px;padding:25px;border:1px solid #e1e1e1}\n", ""]);
@@ -14,7 +14,7 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ 3473:
+/***/ 43473:
 /***/ (function(module) {
 
 // Module
@@ -27,8 +27,8 @@ module.exports = code;
 /***/ 2625:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var api = __webpack_require__(2591);
-            var content = __webpack_require__(5171);
+var api = __webpack_require__(72591);
+            var content = __webpack_require__(35171);
 
             content = content.__esModule ? content.default : content;
 
@@ -49,12 +49,12 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 6543:
+/***/ 46543:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-const template = __webpack_require__(3473)
-const { auth, navigator } = __webpack_require__(4934)
-const Component = __webpack_require__(722)
+const template = __webpack_require__(43473)
+const { auth, navigator } = __webpack_require__(44934)
+const Component = __webpack_require__(50722)
 __webpack_require__(2625)
 
 module.exports = class Login extends Component {

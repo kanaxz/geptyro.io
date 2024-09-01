@@ -1,0 +1,15 @@
+<self :class="'intro'"
+:style.background-color="this.@color">
+  <div class="content">
+    <div class="description">
+      I play teemo jungle
+    </div>
+  </div>
+  <html-scene :images="images"></html-scene>
+  <div class="light">
+    <color-arc :on-change="this.setColor(node.color)"></color-arc>
+    <img 
+      class="lantern" 
+      src="./assets/lantern.png">
+  </div>
+</self>

@@ -1,10 +1,10 @@
 (self["webpackChunkgeptyro_io_client"] = self["webpackChunkgeptyro_io_client"] || []).push([[444],{
 
-/***/ 3531:
+/***/ 65912:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(935);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(40935);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.id, "model-edit-page{display:block;padding:15px;height:100%;width:100%;overflow-y:auto}\n", ""]);
@@ -24,11 +24,11 @@ module.exports = code;
 
 /***/ }),
 
-/***/ 2462:
+/***/ 52462:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var api = __webpack_require__(2591);
-            var content = __webpack_require__(3531);
+var api = __webpack_require__(72591);
+            var content = __webpack_require__(65912);
 
             content = content.__esModule ? content.default : content;
 
@@ -49,13 +49,13 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 444:
+/***/ 80444:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-const Component = __webpack_require__(722)
+const Component = __webpack_require__(50722)
 const template = __webpack_require__(3484)
-const { navigator } = __webpack_require__(4934)
-__webpack_require__(2462)
+const { navigator } = __webpack_require__(44934)
+__webpack_require__(52462)
 
 module.exports = class ModelEditPage extends Component {
   constructor(model){

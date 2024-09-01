@@ -3,7 +3,6 @@ const template = require('./template.html')
 require('./style.scss')
 require('sools-modeling-hedera/components/SearchBar')
 const { auth, menu } = require('sools-hedera/global')
-
 module.exports = class Main extends Layout {
   constructor() {
     super()
@@ -11,7 +10,7 @@ module.exports = class Main extends Layout {
   }
 }
   .define({
-    name: 'app-layout-main',
+    name: 'layout-main',
     template,
   })
   .variables({
@@ -19,9 +18,5 @@ module.exports = class Main extends Layout {
     menu,
   })
   .properties({
-    open: 'any'
-  })
-  .localStorage({
-    name: 'main',
-    properties: ['open'],
+    open: 'any',
   })

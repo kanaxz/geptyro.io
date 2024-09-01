@@ -1,0 +1,41 @@
+<self>
+  <template as="editTabTemplate">
+    <tabs-tab
+      class="edit-panel" 
+      :name="'Edit'">
+        <root-object-fieldset 
+          :type="Image"
+          :value="object">
+        </object-fieldset>
+    </tabs-tab>
+  </template>
+  <div
+    class="scene" 
+    tabindex="0"
+    :on-keydown="this.onKeyDown(event)"
+    :on-mousedown="this.onMouseDown(event)"
+    :on-mousemove="this.onMouseMove(event)"
+    :on-mouseup="this.onMouseUp(event)"
+    :on-dblclick="this.onDoubleClick(event)"
+    :v-for="object of this.objects ">
+      <html-scene-object :object="object" :scene="this"></html-scene-object>
+  </div>
+  <tabs-displayer as="tabs" >
+    <tabs-tab class="tree-panel" :name="'Tree'" :v-for="object of this.objects">
+      <div 
+        class="object"
+        :class.selected="this.@selected === object"
+        :on-click="this.edit(object)"
+        :on-mouseenter="this.select([object])">
+          <span>{{object.id}}</span>
+          <span>{{object.src}}</span>
+      </div>
+    </tabs-tab>
+    <tabs-tab class="images-panel" :name="'Images'" :v-for="image of images">
+      <img 
+        :src="image" 
+        :on-click="this.createImage(image)" ></img>
+    </tabs-tab>
+    
+  </tabs-displayer>
+</self>

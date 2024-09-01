@@ -1,6 +1,6 @@
 {
  "name": "geptyro.io-api",
- "version": "1.25.0",
+ "version": "1.26.0",
  "main": "index.js",
  "private": true,
  "scripts": {
@@ -21,15 +21,15 @@
  "dependencies": {
   "dotenv": "^16.4.5",
   "express": "^4.19.2",
-  "sools-core": "1.9.0",
-  "sools-core-server": "1.5.0",
+  "sools-core": "^1.16.0",
+  "sools-core-server": "^1.19.0",
   "sools-express": "1.19.0",
-  "sools-auth-server": "1.8.0",
-  "sools-migrations": "1.2.0",
-  "sools-modeling": "1.5.0",
-  "sools-modeling-server": "1.4.0",
-  "sools-modeling-server-express": "1.4.0",
-  "sools-mongo": "1.4.0"
+  "sools-auth-server": "^1.11.0",
+  "sools-migrations": "^1.4.0",
+  "sools-modeling": "^1.18.0",
+  "sools-modeling-server": "^1.5.0",
+  "sools-modeling-server-express": "^1.5.0",
+  "sools-mongo": "^1.5.0"
  },
  "devDependencies": {
   "sools-dev": "^1.2.0"

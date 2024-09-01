@@ -1,26 +1,35 @@
-starbor-app {
+geptyro-io-app {
   width: 100%;
   height: 100%;
   display: block;
 
-  .background {
+  >.background {
+    background-color: #000;
     position: absolute;
-    z-index: -9999;
     top: 0;
+    z-index: 9999;
     left: 0;
-    filter: blur(10px) brightness(0.5);
     height: 100%;
     width: 100%;
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    img {}
   }
-  > .container {
+
+  >.container {
     width: 100%;
     height: 100%;
     display: block;
+  }
+
+  &.ready {
+    >.background {
+      transition-duration: 0.5;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }

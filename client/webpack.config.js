@@ -7,9 +7,9 @@ const ENV = process.env.ENV
 
 require('dotenv').config({ path: path(`../envs/${ENV}.env`) })
 
-const envKeys = ['HOST', 'API_SERVER_PORT'].reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(process.env[next]);
-  return prev;
+const envKeys = ['HOST', 'API_SERVER_PORT'].reduce((acc, next) => {
+  acc[`process.env.${next}`] = JSON.stringify(process.env[next]);
+  return acc;
 }, {});
 
 module.exports = (nope, argv) => {
@@ -33,7 +33,7 @@ module.exports = (nope, argv) => {
       ]
     },
     {
-      favicon: path('./src/assets/favicon.ico'),
+      favicon: path('./src/assets/logo-head.png'),
     }
   )
   console.log('config', result)

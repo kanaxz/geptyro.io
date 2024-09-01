@@ -1,0 +1,81 @@
+html-scene-object {
+  position: absolute;
+  user-select: none;
+  min-width: 3%;
+  min-height: 3%;
+  overflow: hidden;
+
+  .controls {
+    display: none;
+
+    .actions {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      border-top: 1px solid #e1e1e1;
+      border-left: 1px solid #e1e1e1;
+
+
+      >* {
+        background-color: #fff;
+        cursor: pointer;
+        padding: 4px;
+        border-right: 1px solid #e1e1e1;
+
+        &:hover {
+          background-color: #0984e3;
+        }
+      }
+    }
+
+    .corners {
+      >div {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: black;
+
+        &.top {
+          top: 0;
+        }
+
+        &.left {
+          left: 0;
+        }
+
+        &.right {
+          right: 0;
+        }
+
+        &.bottom {
+          bottom: 0;
+        }
+
+        &.top.left,
+        &.bottom.right {
+          cursor: nw-resize;
+        }
+
+        &.top.right,
+        &.bottom.left {
+          cursor: ne-resize;
+        }
+      }
+
+    }
+  }
+
+  &.selected {
+    .controls {
+      display: block;
+    }
+
+    background-color:rgba(#0984e3, 0.3);
+  }
+
+  >img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(30px 10px 4px rgba(#000, 0.3));
+  }
+}

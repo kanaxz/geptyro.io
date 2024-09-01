@@ -1,9 +1,10 @@
 const template = require('./template.html')
 const Component = require('sools-hedera/Component')
+const pages = require('../index')
 require('./style.scss')
 
 module.exports = class Home extends Component {
- 
+
   async onReady() {
 
   }
@@ -11,4 +12,7 @@ module.exports = class Home extends Component {
   .define({
     name: 'home-page',
     template,
+  })
+  .variables({
+    pages
   })

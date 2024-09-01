@@ -1,10 +1,10 @@
 (self["webpackChunkgeptyro_io_client"] = self["webpackChunkgeptyro_io_client"] || []).push([[724],{
 
-/***/ 7784:
+/***/ 57784:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(935);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(40935);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.id, "model-layout{display:block;width:100%;height:100%}model-layout>header{display:flex;flex-direction:row;align-items:center;width:100%;height:150px}model-layout>header>.before{display:flex;flex-direction:row;align-items:center;height:100%}model-layout>header>.before>div{height:100%}model-layout>header .infos{margin-left:50px}model-layout>header .infos h3{font-size:26px}model-layout>.content{display:flex;flex-direction:row;align-items:start;height:calc(100% - 150px)}model-layout>.content .actions{display:flex;flex-direction:column;height:100%;width:fit-content}model-layout>.content .actions app-interface{margin-top:10px;color:#fff}model-layout>.content .actions a{width:60px;height:60px;display:flex;align-items:center;justify-content:center;padding:5px;cursor:pointer;font-size:30px}model-layout>.content>.container{position:relative;width:100%;height:100%;flex:1}\n", ""]);
@@ -14,7 +14,7 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ 5404:
+/***/ 65404:
 /***/ (function(module) {
 
 // Module
@@ -24,11 +24,11 @@ module.exports = code;
 
 /***/ }),
 
-/***/ 9038:
+/***/ 89038:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var api = __webpack_require__(2591);
-            var content = __webpack_require__(7784);
+var api = __webpack_require__(72591);
+            var content = __webpack_require__(57784);
 
             content = content.__esModule ? content.default : content;
 
@@ -49,13 +49,13 @@ module.exports = content.locals || {};
 
 /***/ }),
 
-/***/ 5724:
+/***/ 45724:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-const Layout = __webpack_require__(5624)
-const template = __webpack_require__(5404)
-const setup = __webpack_require__(7177)
-__webpack_require__(9038)
+const Layout = __webpack_require__(95624)
+const template = __webpack_require__(65404)
+const setup = __webpack_require__(47177)
+__webpack_require__(89038)
 
 
 module.exports = class ModelLayout extends Layout {

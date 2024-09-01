@@ -9,6 +9,11 @@ module.exports = config(
     serve: {
       port: process.env.SERVE_SERVER_PORT,
       dist: join(__dirname, '../build'),
+      puppeteer: {
+        args: [
+          '--no-sandbox',
+        ]
+      }
     }
   }
 )
